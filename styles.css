@@ -1,0 +1,107 @@
+/* Define custom colors as variables for easy customization */
+:root {
+  --primary-color: rgb(255, 145, 0);
+  --background-color: rgba(0, 0, 0, 0.75);
+  --button-background: rgba(255, 255, 255, 0.75);
+  --button-hover: rgba(0, 255, 106, 0.9);
+}
+
+/* General styles for elements */
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: 'Gotham Rounded', sans-serif;
+  font-weight: normal;
+}
+
+/* Body styles */
+body {
+  padding: 0;
+  margin: 0;
+  background: var(--background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Title styles */
+.title {
+  text-align: center;
+  background-color: var(--background-color);
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px; /* Space between title and grid */
+}
+
+.title h1 {
+  color: var(--primary-color);
+  font-size: 2rem;
+  margin: 0;
+}
+
+/* Calculator grid styles */
+.calculator-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+  gap: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Button styles */
+.calculator-grid > button {
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid white;
+  outline: none;
+  background-color: var(--button-background);
+  color: black;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Add a smooth transition */
+}
+
+.calculator-grid > button:hover {
+  background-color: var(--button-hover);
+  color: white;
+}
+
+/* Special button styles */
+.span-two {
+  grid-column: span 2;
+}
+
+/* Output area styles */
+.output {
+  grid-column: 1 / -1;
+  background-color: var(--background-color);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.output .previous-operand {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.5rem;
+  text-align: right;
+}
+
+.output .current-operand {
+  color: white;
+  font-size: 2.5rem;
+  text-align: right;
+}
+
+/* Footer styles */
+.calculator-grid h6 {
+  color: var(--primary-color);
+  text-align: center;
+  margin-top: 10px; /* Top spacing to separate from the footer */
+}
